@@ -4,11 +4,6 @@
 This repository contains **Dockerfile** of [RethinkDB](http://www.rethinkdb.com/) for [Docker](https://www.docker.io/)'s [trusted build](https://index.docker.io/u/dockerfile/rethinkdb/) published to the public [Docker Registry](https://index.docker.io/).
 
 
-### Dependencies
-
-* [dockerfile/ubuntu](http://dockerfile.github.io/#/ubuntu)
-
-
 ### Installation
 
 1. Install [Docker](https://www.docker.io/).
