@@ -1,17 +1,14 @@
-#
-# RethinkDB Dockerfile
-#
-# https://github.com/dockerfile/rethinkdb
-#
-
-# Pull base image.
-FROM dockerfile/ubuntu
+FROM ubuntu:14.04
 
 # Install RethinkDB.
-RUN \
-  add-apt-repository -y ppa:rethinkdb/ppa && \
-  apt-get update && \
-  apt-get install -y rethinkdb
+
+RUN apt-get update
+RUN apt-get -y upgrade
+RUN apt-get -y install curl
+RUN echo "deb http://download.rethinkdb.com/apt trusty main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list
+RUN curl -s http://download.rethinkdb.com/apt/pubkey.gpg | apt-key add -
+RUN apt-get update
+RUN apt-get -y install rethinkdb
 
 # Define mountable directories.
 VOLUME ["/data"]
